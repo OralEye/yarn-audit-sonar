@@ -1,0 +1,1 @@
+{ issues: [ .[] | select(.type | contains("auditAdvisory")) | { engineId: "yarnaudit", ruleId: "yarnaudit", type: "VULNERABILITY",  severity: ($lookups[.data.advisory.severity]), primaryLocation: { message: (.data.advisory.title + " " + .data.advisory.overview + ". " + .data.advisory.recommendation), filePath: "package.json"  } }] }
