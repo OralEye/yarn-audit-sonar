@@ -1,9 +1,9 @@
 # action.yml
-name: 'Yarn Audit Sonar'
-description: 'Run yarn audit and output the file in a valid format for SonarCloud'
+name: 'PNPM Audit Sonar'
+description: 'Run pnpm audit and output the file in a valid format for SonarCloud'
 outputs:
-   status:
-    description: "The Success/Failure of the action"
+  status:
+    description: 'The Success/Failure of the action'
 runs:
   using: 'docker'
   image: 'Dockerfile'

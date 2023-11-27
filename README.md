@@ -1,12 +1,12 @@
 # Github Action to deploy onto Aptible Deploy
 
-This action runs yarn audit and transforms the output json into a structure for SonarCloud.
-The output file will be named `yarnaudit-sonar.json` in the current directory.
+This action runs pnpm audit and transforms the output json into a structure for SonarCloud.
+The output file will be named `pnpmaudit-sonar.json` in the current directory.
 Set the `externalIssuesReportPaths` value in `sonar-project.properties`
 It should run before SonarCloud is ran.
 
 ```bash
-sonar.externalIssuesReportPaths=./yarnaudit-sonar.json
+sonar.externalIssuesReportPaths=./pnpmaudit-sonar.json
 ```
 
 ## Required input and output arguments
@@ -18,16 +18,16 @@ sonar.externalIssuesReportPaths=./yarnaudit-sonar.json
 ## Environment variables the action uses
 
 ## Example github actions usage
+
 ```yaml
 name: Running a command via SSH on an aptible environment
-
 
 jobs:
   rake:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Run yarn audit
+      - name: Run pnpm audit
         uses: OralEye/yarn-audit-sonar@master
 
       - name: SonarCloud Scan
